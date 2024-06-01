@@ -1,19 +1,27 @@
 #include <stdio.h>
+#include <math.h>
 
-
-int main()
+ int main(void)
 {
-    /* Incremento de precio.
-    El programa, al recibir como dato el precio de un producto importado,
-    incrementa 11% el mismo si este es inferior a $1,500.
-    PRE y NPR: variable de tipo real. */
+        int OP , T;
+        float RES;
+          printf("Ingrese la opcion del calculo y el valor entero:");
+        scanf("%d %d" , &OP, &T);
+        switch (OP)
+       {
+           case 1: RES = T / 5;
+           break;
+           case 2: RES = pow(T,T);
+           /* La funcion pow esta definida en la biblioteca match.h */
+              break;
+           case 3:
+           case 4: RES = 6 * T/2;
+                break;
+            default: RES = 1;
+              break;
+        }
+           printf("\nResultado: %7.2f", RES);
 
-    float PRE, NPR;
-    printf("Ingrese el precio del producto: ");
-    scanf("%f", &PRE);
-    if (PRE > 1500)
-        {
-            NPR = PRE * 1.11;
-            printf("\nNuevo precio: %7.2f", NPR);
-           }
-           }
+}
+
+
