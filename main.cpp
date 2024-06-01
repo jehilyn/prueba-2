@@ -1,21 +1,19 @@
 #include <stdio.h>
 
-
-
 int main()
 {
-    /* Promedio curso.
-    El programa, al recibir como dato el promedio de un alumno en un curso
-    universitario, escribe aprobado si su promedio es mayor o igual a 6, o
-    reprobado en caso contrario. */
+    /* incremento de precio.
+    El programa, al recibir como dato el precio de un producto, incrementa al
+    mismo 11% si es menor a 1500$ y 8% en caso contrario (mayor o igual).
 
-    float PRO;
-    printf("Ingrese el promedio del alumno: ");
-    scanf("%f", &PRO);
-    if (PRO >= 6.0)
-        printf("\nAprobado");
+    PRE y NPR: variables de tipo real. */
+
+    float PRE, NPR;
+    printf("ingrese el precio del producto: ");
+    scanf("%f", &PRE);
+    if (PRE < 1500)
+        NPR = PRE * 1.11;
     else
-        printf("\nReprobado");
-   }
-
-
+        NPR = PRE * 1.08;
+    printf("\nNuevo precio del producto: %8.2f", NPR);
+    }
