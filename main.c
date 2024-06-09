@@ -1,27 +1,31 @@
 #include <stdio.h>
-#include <math.h>
 
- int main(void)
-{
-        int OP , T;
-        float RES;
-          printf("Ingrese la opcion del calculo y el valor entero:");
-        scanf("%d %d" , &OP, &T);
-        switch (OP)
-       {
-           case 1: RES = T / 5;
-           break;
-           case 2: RES = pow(T,T);
-           /* La funcion pow esta definida en la biblioteca match.h */
-              break;
-           case 3:
-           case 4: RES = 6 * T/2;
-                break;
-            default: RES = 1;
-              break;
-        }
-           printf("\nResultado: %7.2f", RES);
+ /* prototipo de funcion.*/
+  int cubo(void);
 
-}
+  /*variable global.*/
+  int I;
+
+  void main(void)
+  {
+      /*Cubo1
+      El programa calcula el cuo de los 10 primeros numeros naturales, con la
+      ayuda de una funcion.*/
+
+      int CUB;
+      for (I = 1; <= 10; I++)
+      {
+          CUB = cubo(); /* Llamada a la funcion cubo.*/
+          printf("\nEl cubo de %d es: %d", I, CUB);
+          }
+          }
+          int cubo(void)
+          /*Declaracion de la funcion.*/
+          /* La funcion calcula el cubo de la variable local:*/
+          {
+              int I = 2;
+              /*variable local entera I con el mismo nombre que la variable global.*/
+              return(I*I*I);
+              }
 
 
