@@ -1,31 +1,27 @@
 #include <stdio.h>
 
- /* prototipo de funcion.*/
-  int cubo(void);
+ /* Conflicto de variables con el mismo nombre.*/
 
-  /*variable global.*/
-  int I;
+ void f1 (void)      /* prototipo de funcion.*/
+ int K = 5;         /* variable global.*/
 
-  void main(void)
-  {
-      /*Cubo1
-      El programa calcula el cuo de los 10 primeros numeros naturales, con la
-      ayuda de una funcion.*/
+int main(void)
+{
+    int I;
+    for (I = 1; I <= 3; I++)
+        f1();
+   }
+   void f1 (void)
+   /* La funcion utiliza tanto la variable local I como la variable
+   global I. */
+   {
+       int K = 2;          /*variable local.*/
+       K += K;
+       printf("\n\El valor de la variable local es: %d", K);
+       K = K + K;             /*Uso de ambas variables.*/
+       printf("\nEl valor de la variable global es: %d", K);
+       }
 
-      int CUB;
-      for (I = 1; <= 10; I++)
-      {
-          CUB = cubo(); /* Llamada a la funcion cubo.*/
-          printf("\nEl cubo de %d es: %d", I, CUB);
-          }
-          }
-          int cubo(void)
-          /*Declaracion de la funcion.*/
-          /* La funcion calcula el cubo de la variable local:*/
-          {
-              int I = 2;
-              /*variable local entera I con el mismo nombre que la variable global.*/
-              return(I*I*I);
-              }
+
 
 
